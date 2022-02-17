@@ -45,7 +45,7 @@ def menu_for_url():
     url = request.args.get("url") 
     dpi = request.args.get("dpi", default=200) 
     max_crawl_depth = request.args.get("max_crawl_depth", default=2)
-    max_image_limit = request.args.get("max_image_limit", default=5)
+    max_image_limit = request.args.get("max_image_limit", default=30)
     max_pdf_limit = request.args.get("max_image_limit", default=5)
 
     response = requests.get(resource_scraper_host + "get_resources", params={ "url": url }) 
