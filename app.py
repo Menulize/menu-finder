@@ -56,14 +56,14 @@ def menu_for_url():
     for pdf_url in resource_urls['pdf_urls'][:max_pdf_limit]:
         pages = ocr_pdf(pdf_url)
         if len(list(filter(lambda page: is_menu_page(page['text']), pages))) > 0:
-            menu_pages.append(pages)
+            menu_pages.extend(pages)
 
     if len(menu_pages) == 0:
         # If we have an image with the word menu in it then we have succeeded, else we OCR all the images we found...
         for image_url in resource_urls["img_urls"][:max_image_limit]:
             pages = ocr_image(image_url)
             if len(list(filter(lambda page: is_menu_page(page['text']), pages))) > 0:
-                menu_pages.append(pages)
+                menu_pages.extend(pages)
     
     return json.dumps({ "page_count": len(menu_pages), "pages": menu_pages })
 
