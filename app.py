@@ -20,7 +20,7 @@ def ocr_pdf(url, dpi=200):
     # Step 1: Download the PDF
     pdf_content = requests.get(url).content
     # Step 2: OCR the PDF
-    response = requests.post(ocr_host + "pdf_to_text", data=pdf_content, params={ "dpi": dpi, "jpgs": true }) 
+    response = requests.post(ocr_host + "pdf_to_text", data=pdf_content, params={ "dpi": dpi, "jpgs": True }) 
     return response.json()['pages']
 
 def ocr_image(url, dpi=200):

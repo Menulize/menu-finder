@@ -7,7 +7,7 @@ Not multithreaded at this point.
 
 ## Sample usage
 ```
-curl http://menu-finder.herokuapp.com/menu_for_url?url=https://firehousepb.com/ 
+curl http://menu-crawler.herokuapp.com/menu_for_url?url=https://firehousepb.com/ 
 ```
 ### output
 ```
